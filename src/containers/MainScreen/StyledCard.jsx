@@ -29,8 +29,8 @@ animation-iteration-count:0.5;
 }
 
 :hover {
-    background: ${props => props.backgroundColor || '#fff'};
-    background-color: ${props => props.backgroundColor || '#fff'};
+    background: ${props => props.$backgroundColor || '#fff'};
+    background-color: ${props => props.$backgroundColor || '#fff'};
     color: #fff;
 
     cursor: pointer;

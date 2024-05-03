@@ -34,36 +34,10 @@ export const NavItem = ({
                     <path d={icon.path} />
                 </svg>
             )
-
         }
-
 
         return undefined;
     }
-
-    const iconModule = pathCode => (
-        <SvgIcon>
-            <svg
-                xmlns='http://www.0 0 32 32'
-                viewBox='0 0 32 32'
-                width='60'
-                height='60'
-            >
-                <g>
-                    <path
-                        d={pathCode}
-                        stretch='Uniform'
-                        fill='#004e8c'
-                        width='46'
-                        height='46'
-                        margin='0,0,0,0'
-                        renderTransformOrigin='0.5,0.5'
-                        style={{ fill: '#004ebc' }}
-                    />
-                </g>
-            </svg>
-        </SvgIcon>
-    )
 
     const onClick = () => {
         onClickItem(item)
