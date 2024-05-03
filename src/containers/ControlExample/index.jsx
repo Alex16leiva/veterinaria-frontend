@@ -1,7 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { MainContentControl } from '../../components/Controls'
+import { ExampleAutoComplete } from './ExampleAutoComplete'
+import { NavControl } from '../../components/Controls/NavControl/NavControl';
+const exampleList = 'exampleList';
+const exampleAutoComplete = 'exampleAutoComplete'
+import './style.css'
+
 
 export const ControlExample = () => {
+
+  const [currentView, setCurrentView] = useState(exampleAutoComplete)
+
+  const items = [
+    {
+      name: exampleAutoComplete,
+      nameShow: 'AutoComplete',
+      iconName: 'Home'
+    },
+    {
+      name: exampleList,
+      nameShow: 'List',
+      iconName: 'GlobalNavButton'
+    }
+  ]
+
+  const handleOnTabChange = (item) => {
+    setCurrentView(item.name)
+  }
+
   return (
-    <div>ControlExample</div>
+    <>
+      <NavControl
+        items={items}
+        onTabChange={handleOnTabChange}
+        activeItem={currentView}
+      />
+
+      <MainContentControl withNav className=''>
+        {!currentView && <ExampleAutoComplete />}
+        {currentView === exampleAutoComplete && (<ExampleAutoComplete />)}
+      </MainContentControl>
+    </>
+
   )
 }
