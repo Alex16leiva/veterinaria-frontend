@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import { MainContentControl } from '../../components/Controls'
 import { ExampleAutoComplete } from './ExampleAutoComplete'
 import { NavControl } from '../../components/Controls/NavControl/NavControl';
-const exampleList = 'exampleList';
-const exampleAutoComplete = 'exampleAutoComplete'
 import './style.css'
+import { ExampleDataGrid } from './ExampleDataGrid';
 
+const exampleList = 'exampleList';
+const exampleAutoComplete = 'exampleAutoComplete';
+const exampleDataGrid = 'exampleDataGrid';
 
 export const ControlExample = () => {
 
@@ -21,6 +23,11 @@ export const ControlExample = () => {
       name: exampleList,
       nameShow: 'List',
       iconName: 'GlobalNavButton'
+    },
+    {
+      name: exampleDataGrid,
+      nameShow: 'DataGrid',
+      iconName: 'Grid'
     }
   ]
 
@@ -30,6 +37,7 @@ export const ControlExample = () => {
 
   return (
     <>
+      
       <NavControl
         items={items}
         onTabChange={handleOnTabChange}
@@ -39,6 +47,7 @@ export const ControlExample = () => {
       <MainContentControl withNav className=''>
         {!currentView && <ExampleAutoComplete />}
         {currentView === exampleAutoComplete && (<ExampleAutoComplete />)}
+        {currentView === exampleDataGrid && (<ExampleDataGrid />)}
       </MainContentControl>
     </>
 
