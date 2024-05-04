@@ -4,10 +4,13 @@ import { ExampleAutoComplete } from './ExampleAutoComplete'
 import { NavControl } from '../../components/Controls/NavControl/NavControl';
 import './style.css'
 import { ExampleDataGrid } from './ExampleDataGrid';
+import { Icon } from '@mui/material';
+import { ExampleIcon } from './ExampleIcon';
 
 const exampleList = 'exampleList';
 const exampleAutoComplete = 'exampleAutoComplete';
 const exampleDataGrid = 'exampleDataGrid';
+const exampleIcon = 'exampleIcon'
 
 export const ControlExample = () => {
 
@@ -28,6 +31,11 @@ export const ControlExample = () => {
       name: exampleDataGrid,
       nameShow: 'DataGrid',
       iconName: 'Grid'
+    },
+    {
+      name: exampleIcon,
+      nameShow: 'Icons',
+      iconName: 'Grid'
     }
   ]
 
@@ -37,7 +45,7 @@ export const ControlExample = () => {
 
   return (
     <>
-      
+      <Icon>'ThreeDRotation'</Icon>
       <NavControl
         items={items}
         onTabChange={handleOnTabChange}
@@ -48,6 +56,7 @@ export const ControlExample = () => {
         {!currentView && <ExampleAutoComplete />}
         {currentView === exampleAutoComplete && (<ExampleAutoComplete />)}
         {currentView === exampleDataGrid && (<ExampleDataGrid />)}
+        {currentView === exampleIcon && (<ExampleIcon />)}
       </MainContentControl>
     </>
 

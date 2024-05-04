@@ -21,8 +21,8 @@ color: #3b3a39;
 }
 .navControl li svg {
 display: block;
-height: 16px;
-width: 16px;
+height: 20px;
+width: 20px;
 fill: #004e8c;
 }
 .navControl li span {
@@ -131,8 +131,8 @@ user-select: none; /* Non-prefixed version, currently supported by Chrome and Op
 }
 .navControl li svg {
 display: table-cell;
-width: 16px;
-height: 16px;
+width: 20px;
+height: 20px;
 }
 .navControl li span {
 display: table-cell;

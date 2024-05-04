@@ -18,21 +18,25 @@ export const NavItem = ({
 
         if (item.svg) {
             return (
-                <svg viewBox='0 0 32 32'>
-                    <path d={item.svg.data} />
-                </svg>
+                <SvgIcon>
+                    <svg viewBox='0 0 32 32'>
+                        <path d={item.svg.data} />
+                    </svg>
+                </SvgIcon>
             )
         }
 
         if (item.iconName) {
             const icon = svgIcons[item.iconName];
             return (
-                <svg viewBox='0 0 24 24'
-                    width='1rem'
-                    height='1rem'
-                >
-                    <path d={icon.path} />
-                </svg>
+                <SvgIcon>
+                    <svg viewBox='0 0 24 24'
+                        width='1rem'
+                        height='1rem'
+                    >
+                        <path d={icon.path} />
+                    </svg>
+                </SvgIcon>
             )
         }
 

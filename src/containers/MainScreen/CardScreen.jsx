@@ -25,7 +25,6 @@ export const CardScreen = ({ item }) => {
               height='48'
               margin='0,0,0,0'
               stretch='Uniform'
-              
             />
           </g>
         </svg>
