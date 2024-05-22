@@ -5,6 +5,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../../containers/Login/loginSlicer';
 import { unRegisterScreen } from '../screenSlicer';
 
+import { AppBar, Toolbar, Typography, Button, Avatar } from '@mui/material';
+import PetsIcon from '@mui/icons-material/Pets';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+
 
 export const NavBar = () => {
     const { user } = useSelector(state => state.logins);
@@ -13,6 +18,7 @@ export const NavBar = () => {
     const navigate = useNavigate();
 
     const handleUnRegisterScreen = () => {
+        navigate('/')
         dispatch(unRegisterScreen());
     }
 
@@ -21,49 +27,26 @@ export const NavBar = () => {
         navigate('login')
     };
 
+
     return (
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2">
-
-            <Link onClick={() => handleUnRegisterScreen()}
-                className="navbar-brand"
-                to="/"
-            >
-                NameOfCompany
-            </Link>
-
-            <div className='separator' />
-
-            <div className="navbar-collapse">
-                <div className="navbar-nav">
-                    <NavLink onClick={() => handleUnRegisterScreen()}
-                        className={(arg) => `nav-item nav-link ${arg.isActive ? 'active' : ''}`}
-                        to="/"
-                    >
-                        Home
-                    </NavLink>
-                </div>
-            </div>
-
-            <div className='separator' />
-
-            <div className='screen-container-text'>
-                {screen}
-            </div>
-
-            <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
-                <ul className="navbar-nav ml-auto">
-                    <span className='nav-item nav-link text-primary'>
-                        {user}
-                    </span>
-
-                    <button
-                        className='nav-item nav-link btn'
-                        onClick={handleLogout}
-                    >
-                        Logout
-                    </button>
-                </ul>
-            </div>
-        </nav>
+        <AppBar position="static">
+            <Toolbar>
+                <PetsIcon sx={{ mr: 1 }} onClick={handleUnRegisterScreen} />
+                <Typography variant="h6" component="div" sx={{ flexGrow: 1, cursor: 'pointer' }} onClick={handleUnRegisterScreen}>
+                    Mi App  {screen && `- ${screen}`}
+                </Typography>
+                {user && (
+                    <div style={{ display: 'flex', alignItems: 'center', marginRight: '10px' }}>
+                        <Avatar sx={{ bgcolor: 'blue', mr: 1 }}>
+                            <AccountCircleIcon />
+                        </Avatar>
+                        <Typography variant="body1" sx={{ mr: 1 }}>
+                            {user}
+                        </Typography>
+                        <Button color="inherit" onClick={handleLogout} startIcon={<ExitToAppIcon />}>Logout</Button>
+                    </div>
+                )}
+            </Toolbar>
+        </AppBar>
     );
 };

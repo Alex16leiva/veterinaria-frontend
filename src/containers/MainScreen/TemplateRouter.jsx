@@ -13,7 +13,7 @@ export const TemplateRouter = () => {
             <NavBar />
 
             <Routes>
-                <Route path="/" element={<DefaultLayout />} />
+                <Route path="/*" element={<DefaultLayout />} />
                 <Route path="security" element={<Security />} />
                 <Route path="clients" element={<Client />} />
                 <Route path='control' element={<ControlExample />} />

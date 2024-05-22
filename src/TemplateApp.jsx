@@ -2,11 +2,12 @@ import React from 'react'
 import { ToastContainer } from 'react-toastify'
 import { RouterApp } from "./Routes/RouterApp";
 import 'react-toastify/dist/ReactToastify.css';
-
+import WaitControlContainer from './components/Controls/WaitControl/WaitControlContainer';
 
 export const TemplateApp = () => {
     return (
         <div>
+            <WaitControlContainer />
             <RouterApp />
             <ToastContainer
                 position="top-right"

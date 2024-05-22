@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    isCollapsed: false
+    isCollapsed: false,
+    showWaitControl: false
 }
 
 export const controlsSlicer = createSlice({
@@ -10,8 +11,11 @@ export const controlsSlicer = createSlice({
     reducers: {
         registerCollapse: (state, action) => {
             state.isCollapsed = action.payload;
+        },
+        registerWaitControl: (state, action) => {
+            state.showWaitControl = action.payload;
         }
     }
 })
 
-export const { registerCollapse } = controlsSlicer.actions;
+export const { registerCollapse, registerWaitControl } = controlsSlicer.actions;

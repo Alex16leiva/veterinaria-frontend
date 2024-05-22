@@ -103,13 +103,13 @@ list-style-type: none;
 padding: 0;
 background-color: #f3f2f1;
 width: ${props => (props.width ? `${props.width}px` : '214px')};
-margin-top: 4px;
+margin-top: 8px;
 }
 .collapsedNavControl {
 width: 60px;
 display: flex;
 flex-direction: column;
-margin-top: 3px;
+margin-top: 8px;
 }
 .collapsedNavControl li {
 height: 43px;
