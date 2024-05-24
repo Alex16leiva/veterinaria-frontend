@@ -5,10 +5,18 @@ export class utilsValidator {
 
     static isNullOrEmpty = text => {
         return (
-            text === undefined ||
-            text === null ||
+            this.isUndefined(text) ||
+            this.isNull(text) ||
             text === '' ||
-            utilsValidator.isWhiteSpace(text)
+            this.isWhiteSpace(text)
         );
     };
+
+    static isUndefined = obj => {
+        return (typeof (obj) === 'undefined');
+    }
+
+    static isNull = obj => {
+        return obj === null;
+    }
 }

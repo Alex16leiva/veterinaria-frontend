@@ -6,7 +6,7 @@ import { SvgIcon } from '@mui/material';
 export const NavItem = ({
     item,
     onClickItem,
-    isGlobalNavButton,
+    isGlobalNavButton = false,
     activeItem,
     notTitle
 }) => {
@@ -72,8 +72,4 @@ export const NavItem = ({
             }
         </li>
     )
-}
-
-NavItem.defaultProps = {
-    isGlobalNavButton: false
 }

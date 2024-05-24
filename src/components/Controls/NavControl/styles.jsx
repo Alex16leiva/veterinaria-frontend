@@ -73,8 +73,8 @@ margin-top: 4px;
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 .navControl {
-top: 56px;
-width: 214px;
+top: 64px;
+width: 60px;
 }
 .navControl li {
 width: 100%;

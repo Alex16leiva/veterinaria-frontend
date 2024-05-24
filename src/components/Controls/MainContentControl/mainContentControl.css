@@ -1,7 +1,7 @@
 .mainContentControl {
     overflow-y: auto;
     position: fixed;
-    top: 82px;
+    top: 65px;
     padding: 10px;
     bottom: 0;
 }

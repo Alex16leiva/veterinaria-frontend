@@ -43,6 +43,7 @@ function CustomToolbar() {
 export const ExampleDataGrid = () => {
     const [rows, setRows] = useState(initialRows);
     const [rowModesModel, setRowModesModel] = useState({});
+    const [pageIndex, setPageIndex] = useState(0)
 
     const handleDeleteClick = (id) => () => {
         setRows(rows.filter((row) => row.id !== id));
@@ -162,6 +163,10 @@ export const ExampleDataGrid = () => {
         },
     ];
 
+    const NextPage = (dato) => {
+        console.log(dato);
+    }
+
     return (
         <div>
             <DataGrid
@@ -174,6 +179,7 @@ export const ExampleDataGrid = () => {
                         },
                     },
                 }}
+                onPaginationModelChange={(dato) => NextPage(dato)}
                 pageSizeOptions={[5, 10, 25]}
                 checkboxSelection
                 disableRowSelectionOnClick
